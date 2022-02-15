@@ -1,0 +1,24 @@
+:root {
+  --main-color-light-one: #fffcff;
+  --main-color-light-two: #f3e4ce;
+  --main-color-dark: #1f2232;
+  --secondary-color: #1436cc;
+  --accent-color-one: #d90368;
+  --accent-color-two: #ffdd1f;
+  --main-font: "Roboto", sans-serif;
+}
+
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+  height: 100%;
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  font-family: var(--main-font);
+}
