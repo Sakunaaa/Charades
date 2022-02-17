@@ -22,6 +22,9 @@
     0.4px 29.6px 35.5px -1.4px hsl(var(--shadow-color) / 0.11),
     0.6px 44.1px 52.9px -1.7px hsl(var(--shadow-color) / 0.11),
     0.9px 64.2px 77px -2px hsl(var(--shadow-color) / 0.12);
+  --neutral-card-clr-900: hsl(207, 19%, 9%);
+  --neutral-card-clr-100: hsl(0, 0%, 100%);
+  --accent-card-clr-400: hsl(142, 90%, 61%);
 }
 
 .container {
@@ -45,4 +48,44 @@ body {
   background-color: var(--main-color-dark);
   color: var(--main-color-light-one);
   box-shadow: var(--shadow-elevation-low);
+}
+
+/* CARD */
+.card {
+  color: var(--neutral-card-clr-100);
+  background-image: url(../img/League-of-Legends.jpg);
+  background-size: cover;
+  padding: 10rem 0 0;
+  max-width: 35ch;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.card-content {
+  --padding: 1.5rem;
+  padding: var(--padding);
+  background: linear-gradient(
+    hsl(0 0% 0% / 0),
+    hsl(20 0% 0% / 0.3) 20%,
+    hsl(0 0% 0% / 1)
+  );
+}
+
+.card-title {
+  position: relative;
+  width: max-content;
+}
+
+.card-title::after {
+  content: "";
+  position: absolute;
+  height: 4px;
+  left: calc(var(--padding) * -1);
+  bottom: 0;
+  width: calc(100% + var(--padding));
+  background: var(--accent-card-clr-400);
+}
+
+input.checkbox {
+  accent-color: var(--accent-card-clr-400);
 }
