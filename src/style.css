@@ -57,8 +57,9 @@ body {
   background-size: cover;
   padding: 10rem 0 0;
   max-width: 35ch;
-  border-radius: 0.5rem;
+  border-radius: 0.25rem;
   overflow: hidden;
+  box-shadow: var(--shadow-elevation-medium);
 }
 
 .card-content {
@@ -86,6 +87,17 @@ body {
   background: var(--accent-card-clr-400);
 }
 
+.card-body {
+  color: rgb(255 255 255 / 0.85);
+}
+
 input.checkbox {
   accent-color: var(--accent-card-clr-400);
+}
+
+.display-grid {
+  margin-top: 1.5rem;
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(3, 1fr);
 }
