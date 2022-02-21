@@ -30,6 +30,9 @@
 .container {
   max-width: 1024px;
   margin: 0 auto;
+}
+
+main {
   height: 100%;
 }
 
@@ -56,7 +59,6 @@ body {
   background-image: url(../img/League-of-Legends.jpg);
   background-size: cover;
   padding: 10rem 0 0;
-  max-width: 35ch;
   border-radius: 0.25rem;
   overflow: hidden;
   box-shadow: var(--shadow-elevation-medium);
@@ -67,7 +69,7 @@ body {
   padding: var(--padding);
   background: linear-gradient(
     hsl(0 0% 0% / 0),
-    hsl(20 0% 0% / 0.3) 20%,
+    hsl(20 0% 0% / 0.5) 20%,
     hsl(0 0% 0% / 1)
   );
 }
@@ -84,7 +86,7 @@ body {
   left: calc(var(--padding) * -1);
   bottom: 0;
   width: calc(100% + var(--padding));
-  background: var(--accent-card-clr-400);
+  background: var(--accent-color-one);
 }
 
 .card-body {
@@ -92,12 +94,36 @@ body {
 }
 
 input.checkbox {
-  accent-color: var(--accent-card-clr-400);
+  accent-color: var(--accent-color-one);
 }
 
 .display-grid {
   margin-top: 1.5rem;
   display: grid;
   gap: 1.5rem;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 280px);
+  justify-content: center;
+}
+
+.play-btn {
+  background-color: red;
+  position: absolute;
+  bottom: 30px;
+  right: 60px;
+  display: inline-block;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+  background: var(--accent-color-one);
+  color: #ffffff;
+  border-radius: 8px;
+  padding: 14px 24px 16px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1;
+  transition: transform 200ms, background 200ms;
+}
+
+.play-btn:hover {
+  transform: translateY(-2px);
 }
