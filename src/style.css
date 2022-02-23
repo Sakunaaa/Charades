@@ -56,7 +56,6 @@ body {
 /* CARD */
 .card {
   color: var(--neutral-card-clr-100);
-  background-image: url(../img/League-of-Legends.jpg);
   background-size: cover;
   padding: 10rem 0 0;
   border-radius: 0.25rem;
