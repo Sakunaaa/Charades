@@ -57,10 +57,17 @@ body {
 .card {
   color: var(--neutral-card-clr-100);
   background-size: cover;
-  padding: 10rem 0 0;
+  height: 400px;
   border-radius: 0.25rem;
   overflow: hidden;
   box-shadow: var(--shadow-elevation-medium);
+  display: flex;
+  flex-direction: column-reverse;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-2px);
 }
 
 .card-content {
@@ -90,6 +97,9 @@ body {
 
 .card-body {
   color: rgb(255 255 255 / 0.85);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 input.checkbox {
