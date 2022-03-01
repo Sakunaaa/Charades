@@ -18,3 +18,12 @@ fetch("http://localhost:3000/categories")
 }).catch((error) => {
     console.log(error)
 })
+
+
+const button = document.getElementById('play-btn');
+const modal = document.getElementById('modal');
+// const modalContent = document.getElementById('modal-content');
+
+button.addEventListener('click', () => {
+  modal.showModal();
+});
