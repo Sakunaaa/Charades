@@ -1,4 +1,6 @@
 export function createCard(name, image, text) {
+    const label = document.createElement("label")
+    label.classList.add("label")
     const card = document.createElement("section")
     card.classList.add("card")
     card.style.backgroundImage = `url(${image})`
@@ -13,8 +15,10 @@ export function createCard(name, image, text) {
     cardBody.classList.add("card-body")
     const checkbox = document.createElement("input")
     checkbox.setAttribute("type", "checkbox")
+    checkbox.setAttribute("value", name)
     checkbox.classList.add("checkbox")
 
+label.appendChild(card)
     card.appendChild(cardContent)
     cardContent.appendChild(title)
     title.appendChild(titleText)
@@ -22,5 +26,5 @@ export function createCard(name, image, text) {
     cardBody.appendChild(cardBodyText)
     cardContent.appendChild(checkbox)
 
-    return card
+    return label
 } 

@@ -103,7 +103,10 @@ body {
 }
 
 input.checkbox {
+  position: absolute;
   accent-color: var(--accent-color-one);
+  top: 5px;
+  right: 5px;
 }
 
 .display-grid {
@@ -179,4 +182,8 @@ dialog {
 
 .timer {
   font-family: "Courier New", Courier, monospace;
+}
+
+.label {
+  position: relative;
 }
