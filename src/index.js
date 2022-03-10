@@ -20,6 +20,21 @@ fetch("http://localhost:3000/categories")
       );
       categoriesElement.appendChild(card);
     }
+    
+document.addEventListener('click', (event) => {
+  const className = event.target.className
+  if (className.includes('card')) {
+    const card = event.target
+    if (card.classList.contains("selected-card")) {
+      card.classList.remove("selected-card")
+    } else {
+      card.classList.add("selected-card")
+    }
+  }
+
+})
+
+
   })
   .catch((error) => {
     console.log(error);
@@ -61,12 +76,3 @@ categoriesForm.addEventListener("submit", (event) => {
 // const tablica = [{checked: true/false, value: string}]
 
 // const card = document.getElementsByClassName("card")
-
-// card.addEventListener("click", () => {
-//   console.log(card)
-//   if (card.classList.contains("selected-card")) {
-//     card.classList.remove("selected-card")
-//   } else {
-//     card.classList.add("selected-card")
-//   }
-// })

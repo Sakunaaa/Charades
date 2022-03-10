@@ -2,7 +2,7 @@ export function createCard(name, image, text) {
     const label = document.createElement("label")
     label.classList.add("label")
     const card = document.createElement("section")
-    card.classList.add("card")
+    card.classList.add("card") 
     card.style.backgroundImage = `url(${image})`
     console.log(image)
     const cardContent = document.createElement("div")
