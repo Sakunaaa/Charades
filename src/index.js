@@ -1,7 +1,6 @@
 import { createCard } from "./categoryCard";
 
 // ToDo:
-// 3. Zaznaczona wersja karty
 // 5. Przycisk graj będzie wyłączony, jak nie będzie zaznaczonych kategorii
 // w przypadku elementow ktore neiistneija od poczatku musimy stworzyc eventlistnera na calym documencie, 
 // a następnie sprawdzic czy classList zawiera label 
@@ -31,6 +30,8 @@ document.addEventListener('click', (event) => {
       card.classList.add("selected-card")
     }
   }
+
+  
 
 })
 
