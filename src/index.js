@@ -1,10 +1,12 @@
 import { createCard } from "./categoryCard";
 
 // ToDo:
-// 5. Przycisk graj będzie wyłączony, jak nie będzie zaznaczonych kategorii
-// w przypadku elementow ktore neiistneija od poczatku musimy stworzyc eventlistnera na calym documencie,
-// a następnie sprawdzic czy classList zawiera label
-// przykład: index.js w todo, linijka 88
+// Na czas kiedy jest wykonywany request zeby był loading
+// Napraw karty gościu
+// Timer
+
+// clearInterval(countDown)
+
 const categoriesElement = document.getElementById("categories");
 const button = document.getElementById("play-btn");
 
@@ -71,6 +73,7 @@ document.addEventListener(
 const categoriesForm = document.getElementById("categories");
 const clue = document.getElementById("clue");
 const rollBtn = document.getElementById("roll-btn");
+const timer = document.getElementById("timer")
 
 const getRandomWord = () => {
   const formElements = [];
@@ -90,7 +93,24 @@ const getRandomWord = () => {
     .then((response) => response.json())
     .then((result) => {
       clue.textContent = result.data.content;
+      let timeLimit = 300000;
+      const minute = 60000;
+      const second = 1000;
+      const countDown = setInterval(() => {
+        timeLimit -= 1000;
+        const minutes = Math.floor(timeLimit / minute);
+        const seconds = (timeLimit % minute) / second;
+
+        const time = `0${minutes}:${seconds}`;
+        timer.textContent = time
+
+        if (timeLimit === 0) {
+          clearInterval(countDown)
+        }
+        // uzyj minutes i seconds, zeby zaktualizowac tekst
+      }, 1000) 
     });
+  // TUTAJ BEDZIE TIMER
 };
 
 rollBtn.addEventListener("click", (event) => {
