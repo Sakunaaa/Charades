@@ -6,6 +6,7 @@ import { createCard } from "./categoryCard";
 // a następnie sprawdzic czy classList zawiera label
 // przykład: index.js w todo, linijka 88
 const categoriesElement = document.getElementById("categories");
+const button = document.getElementById("play-btn");
 
 fetch("http://localhost:3000/categories")
   .then((response) => response.json())
@@ -25,10 +26,19 @@ fetch("http://localhost:3000/categories")
       const className = event.target.className;
       if (className.includes("card")) {
         const card = event.target;
+        const selectedCards = document.getElementsByClassName("selected-card");
+        console.log(selectedCards);
+        if (selectedCards.length !== 0) {
+          button.removeAttribute("disabled");
+        }
         if (card.classList.contains("selected-card")) {
           card.classList.remove("selected-card");
+          if (selectedCards.length === 0) {
+            button.setAttribute("disabled", "true");
+          }
         } else {
           card.classList.add("selected-card");
+          button.removeAttribute("disabled");
         }
       }
     });
@@ -37,7 +47,6 @@ fetch("http://localhost:3000/categories")
     console.log(error);
   });
 
-const button = document.getElementById("play-btn");
 const modal = document.getElementById("modal");
 const modalContent = document.getElementById("modal-content");
 
@@ -60,8 +69,8 @@ document.addEventListener(
 );
 
 const categoriesForm = document.getElementById("categories");
-const clue = document.getElementById("clue")
-const rollBtn = document.getElementById("roll-btn")
+const clue = document.getElementById("clue");
+const rollBtn = document.getElementById("roll-btn");
 
 const getRandomWord = () => {
   const formElements = [];
@@ -82,15 +91,15 @@ const getRandomWord = () => {
     .then((result) => {
       clue.textContent = result.data.content;
     });
-}
+};
 
 rollBtn.addEventListener("click", (event) => {
-  getRandomWord()
-})
+  getRandomWord();
+});
 
 categoriesForm.addEventListener("submit", (event) => {
   event.preventDefault();
-  getRandomWord()
+  getRandomWord();
 });
 
 // const tablica = [{checked: true/false, value: string}]
